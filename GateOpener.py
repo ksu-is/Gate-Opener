@@ -37,11 +37,6 @@ def Camera_function():
 Camera_function()
 
 
-
-
-
-
-
 def entry_code():
     num = ""
     holder = "Working! Welcome"
