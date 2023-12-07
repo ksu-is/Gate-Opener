@@ -1,9 +1,17 @@
 # lets get started
 import random
 import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+from numpy.lib.polynomial import poly
+import easyocr
+
+
+
 
 cam = cv2.VideoCapture(0)
 lst = [1234, 4321, 0000, 5678]
+
 
 def Camera_function():
 
@@ -32,9 +40,37 @@ def Camera_function():
 
 
     cam.release()
-    cam.destroyAllWindows()
 
 Camera_function()
+
+
+
+
+
+
+def scan_function():
+
+    pic_scan1 = ("C:\\Users\\tkcol\\OneDrive\\Desktop\\Gate-Opener\\opencv_frame_0.png")
+    img_mpl = plt.imread(pic_scan1)
+
+
+    fig, ax = plt.subplots(figsize=(10, 10))
+    ax.axis('off')
+    ax.imshow(img_mpl)
+    plt.show()
+
+    word_screen = easyocr.Reader(['en'], gpu=False)
+    result = word_screen.readtext(pic_scan1)
+    print(result)
+    print(result[0][1])
+
+    lst.append(result[0][1])
+    print("welcome!")
+
+
+scan_function()
+     
+
 
 
 def entry_code():
