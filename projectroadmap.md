@@ -6,5 +6,5 @@ Roadmap
 - [x] Get Camera function working
 - [x] combining the camera with a scanning function
 - [x] combine all functions together
-- [ ] imports
-- [ ] finish up
+- [x] imports
+- [x] finish up
